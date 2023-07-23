@@ -4,7 +4,7 @@ from django.db import models
 class Advertisement(models.Model):
    
     # Товар
-    #строковое поле для небольши размеров
+    # Cтроковое поле для небольших размеров
     # 'заголовок' - verbose_name - название поля извне
     title = models.CharField('заголовок', max_length=128)
 
@@ -36,15 +36,13 @@ class Advertisement(models.Model):
 
     # Количество товара
 
-
-
     # Возможен ли обмен
 
     # Адрес продажи
 
     # Б/у товар или нет
 
-    # 
+    # Возможность взять в долг/в рассрочку
 
 
 
