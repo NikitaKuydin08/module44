@@ -1,5 +1,8 @@
 from django.db import models
 
+class Meta:
+    db_table = '"advertisements"'
+
 
 class Advertisement(models.Model):
    
@@ -27,6 +30,12 @@ class Advertisement(models.Model):
     # Дата изменения обновления
     # Поле записывается при каждом обновлении
     updated_at = models.DateTimeField(auto_now=True)
+ 
+    def __str__(self):
+        return f"Advertisement(id={self.id}, title={self.title}, price={self.price})"
+
+    class Meta:
+        db_table = 'advertisements'
 
     # Имя продавца + контанты
 
@@ -43,6 +52,8 @@ class Advertisement(models.Model):
     # Б/у товар или нет
 
     # Возможность взять в долг/в рассрочку
+
+
 
 
 
