@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Главная новая {% endblock %}
 
+{% block title %} Главная новая {% endblock %}
 
 {% block content %}
 <ul class="nav nav-pills sticky-top bg-white nav-fill">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="index.html">
+    <a class="nav-link active" aria-current="page" href="/">
       <span style="font-weight: bold;">Главная</span>
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="top-sellers.html"><span style="font-weight: bold;">Топ продавцов</span>
+    <a class="nav-link" href="{% url 'top-sellers' %}"><span style="font-weight: bold;">Топ продавцов</span>
     </a>
   </li>
   <li class="nav-item">
@@ -208,6 +208,4 @@
   </nav>
 </footer>
 {% endblock %}
-</body>
-
 </html>
