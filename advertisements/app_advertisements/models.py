@@ -1,12 +1,19 @@
 from django.db import models
 from django.contrib import admin
 from django.utils.html import format_html
+from django.contrib.auth import get_user_model
 
-class Meta:
-    db_table = '"advertisements"'
+
+User = get_user_model()
 
 
 class Advertisement(models.Model):
+
+    user = models.ForeignKey(
+        User,
+        verbose_name='пользователь',
+        on_delete=models.CASCADE
+    )
    
     # Товар
     # Cтроковое поле для небольших размеров
