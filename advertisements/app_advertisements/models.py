@@ -15,6 +15,11 @@ class Advertisement(models.Model):
         on_delete=models.CASCADE
     )
    
+    image = models.ImageField(
+        'изображение',
+        upload_to='advertisements/'
+    )
+
     # Товар
     # Cтроковое поле для небольших размеров
     # 'заголовок' - verbose_name - название поля извне
@@ -46,7 +51,7 @@ class Advertisement(models.Model):
         if self.created_at.date() == timezone.now().date():
             created_date = self.created_at.strftime("%H:%M:%S")
             return format_html(
-                '<span style="color:green; font-weight:bold;">Сегодня в {} </span>',
+                '<span style="color:violet; font-weight:bold;">Сегодня в {} </span>',
                 created_date
             )
         
@@ -58,7 +63,7 @@ class Advertisement(models.Model):
         if self.updated_at.date() == timezone.now().date():
             updated_date = self.updated_at.strftime("%H:%M:%S")
             return format_html(
-                '<span style="color:red; font-weight:bold;">Сегодня в {} </span>', 
+                '<span style="color:blue; font-weight:bold;">Сегодня в {} </span>', 
                 updated_date
             )
         
