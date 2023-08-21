@@ -8,11 +8,11 @@ from django.urls import reverse
 def index(request):
      ads = Advertisement.objects.all()
      context = {'advertisements': ads}
-     return render(request, 'index.html', context)
+     return render(request, 'app_advertisements/index.html', context)
 
 
 def top_sellers(request):
-    return render(request, 'top-sellers.html')
+    return render(request, 'app_advertisements/top-sellers.html')
 
 
 
@@ -30,4 +30,4 @@ def advertisement_post(request):
           form = AdvertisementForm()
 
      context = {'form': form}
-     return render(request, 'advertisement-post.html', context)
+     return render(request, 'app_advertisements/advertisement-post.html', context)
